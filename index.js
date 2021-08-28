@@ -1,4 +1,6 @@
 const http = require('http')
+
+const logger = require('./utils/logger')
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -14,7 +16,7 @@ const blogSchema = mongoose.Schema({
 const Blog = mongoose.model('Blog', blogSchema)
 
 const mongoUrl = 'mongodb+srv://jere:jere@blogi0.qgvfa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true }).catch(error => console.log(error))
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true }).catch(error => logger.error(error))
 
 app.use(cors())
 app.use(express.json())
@@ -39,5 +41,5 @@ app.post('/api/blogs', (request, response) => {
 
 const PORT = 3003
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+  logger.info(`Server running on port ${PORT}`)
 })
