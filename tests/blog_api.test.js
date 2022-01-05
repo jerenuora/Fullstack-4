@@ -27,7 +27,8 @@ test('blog identifier field is id', async () => {
 test('a blog can be posted', async () => {
     const newBlog = {
         title: 'A new post',
-        author: 'Jere'
+        author: 'Jere',
+        url: 'www.website.com'
     }
     await api
         .post('/api/blogs')
@@ -45,7 +46,8 @@ test('likes set to 0 if empty', async () => {
     await Blog.deleteMany({})
     const newBlog = {
         title: 'A new post',
-        author: 'Jere'
+        author: 'Jere',
+        url: 'www.website.com'
     }
     await api
         .post('/api/blogs')
@@ -54,6 +56,17 @@ test('likes set to 0 if empty', async () => {
         .expect('Content-Type', /application\/json/)
     const blogAfterPost = await api.get('/api/blogs')
     expect(blogAfterPost.body[0].likes).toEqual(0)
+})
+test('post returns 400 without title, url', async () => {
+    await Blog.deleteMany({})
+    const newBlog = {
+        author: 'Jere'
+    }
+    await api
+        .post('/api/blogs')
+        .send(newBlog)
+        .expect(400)
+        .expect('Content-Type', /application\/json/)
 })
 
 afterAll(() => {
