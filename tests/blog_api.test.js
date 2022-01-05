@@ -56,9 +56,9 @@ test('likes set to 0 if empty', async () => {
         .expect('Content-Type', /application\/json/)
     const blogAfterPost = await api.get('/api/blogs')
     expect(blogAfterPost.body[0].likes).toEqual(0)
+
 })
 test('post returns 400 without title, url', async () => {
-    await Blog.deleteMany({})
     const newBlog = {
         author: 'Jere'
     }
