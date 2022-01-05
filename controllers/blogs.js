@@ -10,9 +10,9 @@ blogsRouter.post('/', async (req, res) => {
   const blog = new Blog(req.body)
 
   if (blog.title === undefined) {
-    res.status(400).json('Title required')
+    res.status(400).json('Bad request')
   } else if (blog.url === undefined) {
-    res.status(400).json('Url needed')
+    res.status(400).json('Bad request ')
   }  else {
     const result  = await blog.save()
     res.status(201).json(result)}
