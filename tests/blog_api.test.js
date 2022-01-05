@@ -41,6 +41,20 @@ test('a blog can be posted', async () => {
     expect(blogTitles).toContain('A new post')
 })
 
+test('likes set to 0 if empty', async () => {
+    await Blog.deleteMany({})
+    const newBlog = {
+        title: 'A new post',
+        author: 'Jere'
+    }
+    await api
+        .post('/api/blogs')
+        .send(newBlog)
+        .expect(201)
+        .expect('Content-Type', /application\/json/)
+    const blogAfterPost = await api.get('/api/blogs')
+    expect(blogAfterPost.body[0].likes).toEqual(0)
+})
 
 afterAll(() => {
     mongoose.connection.close()
