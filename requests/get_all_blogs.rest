@@ -1,9 +1,7 @@
-post  http://localhost:3003/api/blogs
+post  http://localhost:3003/api/login
 Content-Type: application/json
 
 {
-  "url":"sfasfa",
-  "title": "3123",
-  "author": "22223",
-  "userId": "61d71e1ffc1b1a9d1856aaad"
+  "username":"TEST_LOGIN",
+  "password": "password"
 }
