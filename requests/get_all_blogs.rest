@@ -1,9 +1,10 @@
 post  http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRFU1RfTE9HSU4iLCJpZCI6IjYxZDcyMmY3ODZmN2ZmYTAyMjQzMGRiNyIsImlhdCI6MTY0MTQ4OTQ3NH0.FZ6smmcl_-OANmo9tPpr3VaESlP5iLlq3X3qAeAOydQ
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRFU1RfTE9HSU5TXyIsImlkIjoiNjFkNzNhOWMyNGE1OTNhNDE0ZDE4NWRmIiwiaWF0IjoxNjQxNDk1MjE4fQ.BieK9hzOCmTO2hDddAt2GOXwlXwFI7Qt9AkiF6hSxDk
 
 {
-  "url":"urlurlurasdwdqlurlurlurl",
-  "title": "asddwdqsdasdasdfads",
-  "author": "josfjosi"
+    "url":"sfasfa",
+    "title": "3123",
+    "author": "22223",
+    "userId": "61d71e1ffc1b1a9d1856aaad"
 }
