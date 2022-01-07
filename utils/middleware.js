@@ -48,6 +48,4 @@ module.exports = {
   requestLogger,
   unknownEndpoint,
   errorHandler,
-  getTokenFrom,
-  userExtractor
-}
+  getTokenFrom}
